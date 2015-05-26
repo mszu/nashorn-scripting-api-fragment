@@ -1,5 +1,5 @@
 # Nashorn Scripting API Fragment
-If you're running AEM 6.0 SP2 with Java 8, you might want to use the new Nashorn JavaScript engine to do cool server-side JS stuff. Unfortunately, you can't -- even though the nashorn.jar is on the system classpath, it is not available to the bundles inside the OSGi container.
+If you're running AEM 6.0 SP2 with Java 8, you might want to use the new Nashorn JavaScript engine to do cool server-side JS stuff. Unfortunately, you can't -- even though nashorn.jar is on the system classpath, it is not available to the bundles inside the OSGi container.
 
 This project fixes that.
 
