@@ -19,4 +19,8 @@ The build artifact from this project is an OSGi [bundle fragment](http://wiki.os
 
 ## Now What?
 
-Installing this fragment only exposes the [Nashorn scripting package](https://docs.oracle.com/javase/8/docs/jdk/api/nashorn/jdk/nashorn/api/scripting/package-summary.html) to the other bundles in your OSGi environment (note that this is *NOT* the same as registering a Sling scripting engine). It is up to you to [write code that uses it](https://docs.oracle.com/javase/8/docs/technotes/guides/scripting/nashorn/intro.html#sthref14).
+Installing this fragment only exposes the [Nashorn scripting package](https://docs.oracle.com/javase/8/docs/jdk/api/nashorn/jdk/nashorn/api/scripting/package-summary.html) to the other bundles in your OSGi environment (note that this is *NOT* the same as registering a Sling scripting engine, so you probably can't use getEngineByName('nashorn') until you do). It is up to you to [write code that uses it](https://docs.oracle.com/javase/8/docs/technotes/guides/scripting/nashorn/toc.html), e.g.
+```java
+ScriptEngine engine = new jdk.nashorn.api.scripting.NashornScriptEngineFactory().getScriptEngine();
+engine.eval('var a = "world"; print("Hello " + a);');
+```
